@@ -1,10 +1,11 @@
 const express = require('express');
 const { exec } = require('child_process');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/convert-legal-text', (req, res) => {
